@@ -1,0 +1,105 @@
+---
+import TutorialLayout from '../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Variabel dan Tipe Data" 
+  description="Belajar cara menyimpan dan menggunakan data dalam Python"
+  currentPage={3}
+  totalPages={10}
+  prevLink="/materi/02-hello-world"
+  nextLink="/materi/04-math-operations"
+>
+  <div slot="content">
+    <h1>Variabel dan Tipe Data</h1>
+    
+    <p>Variabel seperti wadah yang menyimpan data. Dalam Python, Anda bisa membuat variabel dengan mudah menggunakan operator assignment.</p>
+    
+    <h2>Membuat Variabel</h2>
+    
+    <p>Untuk membuat variabel, gunakan operator assignment <code>=</code>:</p>
+    
+    <pre><code>nama = "Alice"
+umur = 25</code></pre>
+    
+    <h2>Tipe Data</h2>
+    
+    <p>Python memiliki beberapa tipe data dasar:</p>
+    
+    <ul>
+      <li><strong>String (str)</strong>: Data teks, diapit dengan tanda kutip</li>
+      <li><strong>Integer (int)</strong>: Bilangan bulat</li>
+      <li><strong>Float</strong>: Bilangan desimal</li>
+      <li><strong>Boolean (bool)</strong>: Nilai True atau False</li>
+    </ul>
+    
+    <h2>Aturan Penamaan Variabel</h2>
+    
+    <p>Ada beberapa aturan dalam memberi nama variabel:</p>
+    
+    <ul>
+      <li>Harus dimulai dengan huruf atau underscore (_)</li>
+      <li>Tidak boleh dimulai dengan angka</li>
+      <li>Hanya boleh mengandung huruf, angka, dan underscore</li>
+      <li>Case-sensitive (nama dan Nama adalah berbeda)</li>
+      <li>Tidak boleh menggunakan kata kunci Python</li>
+    </ul>
+    
+    <h2>Menggunakan Variabel</h2>
+    
+    <p>Setelah membuat variabel, Anda bisa menggunakannya dalam kode. Anda juga bisa mencetak variabel menggunakan fungsi <code>print()</code>.</p>
+    
+    <h2>F-strings</h2>
+    
+    <p>F-strings adalah cara mudah untuk menyertakan variabel dalam teks. Letakkan huruf <code>f</code> sebelum tanda kutip dan gunakan <code>{`{nama_variabel}`}</code> di dalamnya:</p>
+    
+    <pre><code>nama = "Alice"
+print(f"Halo, {`{nama}`}!")</code></pre>
+    
+    <h2>Coba Sendiri</h2>
+    
+    <p>Eksperimen dengan kode di sebelah kanan. Coba:</p>
+    <ul>
+      <li>Mengubah nilai variabel</li>
+      <li>Membuat variabel baru</li>
+      <li>Menggunakan tipe data yang berbeda</li>
+      <li>Membuat nama variabel yang valid</li>
+    </ul>
+  </div>
+
+  <div slot="playground">
+    <TutorialPlayground 
+      code={`# Membuat variabel
+nama = "Alice"
+umur = 25
+tinggi = 165.5
+adalah_mahasiswa = True
+
+# Menggunakan variabel dalam print statements
+print(f"Nama: {nama}")
+print(f"Umur: {umur}")
+print(f"Tinggi: {tinggi} cm")
+print(f"Mahasiswa: {adalah_mahasiswa}")
+
+# Anda bisa mengubah nilai variabel
+umur = 26
+print(f"Umur baru: {umur}")
+
+# Coba buat variabel Anda sendiri di bawah ini:
+warna_favorit = "biru"
+print(f"Warna favorit saya adalah {warna_favorit}")
+
+# Contoh tipe data berbeda
+jumlah_buku = 10        # integer
+harga = 25.99          # float
+judul = "Belajar Python"  # string
+tersedia = True        # boolean
+
+print(f"Buku: {judul}")
+print(f"Harga: Rp{harga}")
+print(f"Jumlah: {jumlah_buku}")
+print(f"Tersedia: {tersedia}")`}
+    />
+  </div>
+</TutorialLayout>

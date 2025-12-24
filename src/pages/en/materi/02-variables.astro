@@ -1,0 +1,81 @@
+---
+import TutorialLayout from '../../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Variables and Data Types" 
+  description="Learn how to store and use data in Python"
+  currentPage={2}
+  totalPages={10}
+  prevLink="/en/materi/01-hello-world"
+  nextLink="/en/materi/03-math-operations"
+>
+  <div slot="content">
+    <h1>Variables and Data Types</h1>
+    
+    <p>Variables are like containers that store data. In Python, you can create a variable by simply assigning a value to it.</p>
+    
+    <h2>Creating Variables</h2>
+    
+    <p>To create a variable, use the assignment operator <code>=</code>:</p>
+    
+    <pre><code>name = "Alice"
+age = 25</code></pre>
+    
+    <h2>Data Types</h2>
+    
+    <p>Python has several basic data types:</p>
+    
+    <ul>
+      <li><strong>String (str)</strong>: Text data, enclosed in quotes</li>
+      <li><strong>Integer (int)</strong>: Whole numbers</li>
+      <li><strong>Float</strong>: Decimal numbers</li>
+      <li><strong>Boolean (bool)</strong>: True or False values</li>
+    </ul>
+    
+    <h2>Using Variables</h2>
+    
+    <p>Once you create a variable, you can use it in your code. You can also print variables using the <code>print()</code> function.</p>
+    
+    <h2>F-strings</h2>
+    
+    <p>F-strings are a convenient way to include variables in text. Put an <code>f</code> before the quotes and use <code>{`{variable_name}`}</code> inside:</p>
+    
+    <pre><code>name = "Alice"
+print(f"Hello, {`{name}`}!")</code></pre>
+    
+    <h2>Try it yourself</h2>
+    
+    <p>Experiment with the code on the right. Try:</p>
+    <ul>
+      <li>Changing the values of the variables</li>
+      <li>Creating new variables</li>
+      <li>Using different data types</li>
+    </ul>
+  </div>
+
+  <div slot="playground">
+    <TutorialPlayground 
+      code={`# Creating variables
+name = "Alice"
+age = 25
+height = 5.6
+is_student = True
+
+# Using variables in print statements
+print(f"Name: {name}")
+print(f"Age: {age}")
+print(f"Height: {height} feet")
+print(f"Is student: {is_student}")
+
+# You can change variable values
+age = 26
+print(f"New age: {age}")
+
+# Try creating your own variables below:
+favorite_color = "blue"
+print(f"My favorite color is {favorite_color}")`}
+    />
+  </div>
+</TutorialLayout>

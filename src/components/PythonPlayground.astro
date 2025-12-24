@@ -1,0 +1,27 @@
+---
+import CompactPythonEditor from './react/CompactPythonEditor.jsx';
+
+export interface Props {
+  code?: string;
+  height?: string;
+  showReset?: boolean;
+  title?: string;
+}
+
+const { 
+  code = "", 
+  height = "400px", 
+  showReset = false, 
+  title = "Try it yourself" 
+} = Astro.props;
+---
+
+<div class="my-6">
+  <CompactPythonEditor 
+    initialCode={code}
+    height={height}
+    showReset={showReset}
+    title={title}
+    client:load 
+  />
+</div>

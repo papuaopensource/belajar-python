@@ -1,0 +1,95 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  currentPage?: number;
+  totalPages?: number;
+  prevLink?: string;
+  nextLink?: string;
+}
+
+const { 
+  title, 
+  description, 
+  currentPage = 1, 
+  totalPages = 1,
+  prevLink,
+  nextLink 
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  
+  <main class="flex-1 flex flex-col h-screen">
+    <!-- Progress Bar -->
+    <div class="bg-muted/30 border-b px-4 py-2">
+      <div class="container mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <h1 class="text-lg font-semibold text-foreground">{title}</h1>
+          <div class="text-sm text-muted-foreground">
+            {currentPage} / {totalPages}
+          </div>
+        </div>
+        
+        <!-- Navigation -->
+        <div class="flex items-center space-x-2">
+          {prevLink && (
+            <a 
+              href={prevLink}
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-3"
+            >
+              ← Previous
+            </a>
+          )}
+          {nextLink && (
+            <a 
+              href={nextLink}
+              class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3"
+            >
+              Next →
+            </a>
+          )}
+        </div>
+      </div>
+      
+      <!-- Progress indicator -->
+      <div class="container mx-auto mt-2">
+        <div class="w-full bg-muted rounded-full h-1">
+          <div 
+            class="bg-primary h-1 rounded-full transition-all duration-300" 
+            style={`width: ${(currentPage / totalPages) * 100}%`}
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Split Layout -->
+    <div class="flex-1 flex overflow-hidden">
+      <!-- Content Panel (Left) -->
+      <div class="w-1/2 overflow-auto border-r bg-background">
+        <div class="p-6">
+          <article class="prose prose-slate dark:prose-invert max-w-none">
+            <slot name="content" />
+          </article>
+        </div>
+      </div>
+
+      <!-- Playground Panel (Right) -->
+      <div class="w-1/2 flex flex-col bg-muted/20">
+        <div class="p-2 border-b bg-muted/30">
+          <span class="text-sm font-medium text-muted-foreground">Try it yourself</span>
+        </div>
+        <div class="flex-1 overflow-hidden">
+          <slot name="playground" />
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

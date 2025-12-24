@@ -1,0 +1,174 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const basePath = lang === 'id' ? '/materi' : '/en/materi';
+
+const tutorials = [
+  {
+    id: 1,
+    title: t('lesson.hello_world.title'),
+    description: t('lesson.hello_world.desc'),
+    link: `${basePath}/01-hello-world`,
+    completed: false
+  },
+  {
+    id: 2,
+    title: t('lesson.variables.title'),
+    description: t('lesson.variables.desc'),
+    link: `${basePath}/02-variables`,
+    completed: false
+  },
+  {
+    id: 3,
+    title: t('lesson.math.title'),
+    description: t('lesson.math.desc'),
+    link: `${basePath}/03-math-operations`,
+    completed: false
+  },
+  {
+    id: 4,
+    title: t('lesson.strings.title'),
+    description: t('lesson.strings.desc'),
+    link: `${basePath}/04-strings`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 5,
+    title: t('lesson.lists.title'),
+    description: t('lesson.lists.desc'),
+    link: `${basePath}/05-lists`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 6,
+    title: t('lesson.loops.title'),
+    description: t('lesson.loops.desc'),
+    link: `${basePath}/06-loops`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 7,
+    title: t('lesson.conditionals.title'),
+    description: t('lesson.conditionals.desc'),
+    link: `${basePath}/07-conditionals`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 8,
+    title: t('lesson.functions.title'),
+    description: t('lesson.functions.desc'),
+    link: `${basePath}/08-functions`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 9,
+    title: t('lesson.errors.title'),
+    description: t('lesson.errors.desc'),
+    link: `${basePath}/09-errors`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 10,
+    title: t('lesson.project.title'),
+    description: t('lesson.project.desc'),
+    link: `${basePath}/10-project`,
+    completed: false,
+    disabled: true
+  }
+];
+---
+
+<BaseLayout title={t('materials.title')} description={t('materials.subtitle')}>
+  <Header />
+  
+  <main class="flex-1">
+    <div class="container mx-auto px-4 py-8">
+      <div class="max-w-4xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold text-foreground mb-4">{t('materials.title')}</h1>
+          <p class="text-xl text-muted-foreground mb-6">
+            {t('materials.subtitle')}
+          </p>
+          <div class="flex items-center justify-center space-x-4 text-sm text-muted-foreground">
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 bg-primary rounded-full"></div>
+              <span>{t('materials.available')}</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <div class="w-3 h-3 bg-muted rounded-full"></div>
+              <span>{t('materials.coming_soon')}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tutorial Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {tutorials.map((tutorial) => (
+            <div class={`
+              border rounded-lg p-6 transition-all duration-200
+              ${tutorial.disabled 
+                ? 'bg-muted/20 border-muted cursor-not-allowed opacity-60' 
+                : 'bg-card border-border hover:border-primary/50 hover:shadow-md cursor-pointer'
+              }
+            `}>
+              {tutorial.disabled ? (
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-sm font-medium text-muted-foreground">
+                        {tutorial.id}
+                      </div>
+                      <h3 class="text-lg font-semibold text-muted-foreground">{tutorial.title}</h3>
+                    </div>
+                    <span class="text-xs px-2 py-1 bg-muted text-muted-foreground rounded">{t('materials.coming_soon')}</span>
+                  </div>
+                  <p class="text-muted-foreground text-sm">{tutorial.description}</p>
+                </div>
+              ) : (
+                <a href={tutorial.link} class="block">
+                  <div class="flex items-center justify-between mb-3">
+                    <div class="flex items-center space-x-3">
+                      <div class="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-medium">
+                        {tutorial.id}
+                      </div>
+                      <h3 class="text-lg font-semibold text-foreground">{tutorial.title}</h3>
+                    </div>
+                    <svg class="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                  <p class="text-muted-foreground text-sm">{tutorial.description}</p>
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <!-- Get Started -->
+        <div class="mt-12 text-center">
+          <a 
+            href={`${basePath}/01-hello-world`}
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
+          >
+            {t('materials.start_learning')}
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

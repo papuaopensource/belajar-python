@@ -1,0 +1,122 @@
+---
+import TutorialLayout from '../../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Math Operations" 
+  description="Learn arithmetic operations in Python"
+  currentPage={3}
+  totalPages={10}
+  prevLink="/en/materi/02-variables"
+  nextLink="/en/materi/04-strings"
+>
+  <div slot="content">
+    <h1>Math Operations</h1>
+    
+    <p>Python can perform mathematical calculations using arithmetic operators. Let's explore the basic math operations.</p>
+    
+    <h2>Arithmetic Operators</h2>
+    
+    <table class="w-full border-collapse border border-border">
+      <thead>
+        <tr class="bg-muted">
+          <th class="border border-border p-2 text-left">Operator</th>
+          <th class="border border-border p-2 text-left">Operation</th>
+          <th class="border border-border p-2 text-left">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-border p-2"><code>+</code></td>
+          <td class="border border-border p-2">Addition</td>
+          <td class="border border-border p-2"><code>5 + 3 = 8</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>-</code></td>
+          <td class="border border-border p-2">Subtraction</td>
+          <td class="border border-border p-2"><code>5 - 3 = 2</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>*</code></td>
+          <td class="border border-border p-2">Multiplication</td>
+          <td class="border border-border p-2"><code>5 * 3 = 15</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>/</code></td>
+          <td class="border border-border p-2">Division</td>
+          <td class="border border-border p-2"><code>6 / 3 = 2.0</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>**</code></td>
+          <td class="border border-border p-2">Exponentiation</td>
+          <td class="border border-border p-2"><code>2 ** 3 = 8</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>//</code></td>
+          <td class="border border-border p-2">Floor Division</td>
+          <td class="border border-border p-2"><code>7 // 3 = 2</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>%</code></td>
+          <td class="border border-border p-2">Modulus (Remainder)</td>
+          <td class="border border-border p-2"><code>7 % 3 = 1</code></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Order of Operations</h2>
+    
+    <p>Python follows the standard mathematical order of operations (PEMDAS):</p>
+    <ol>
+      <li><strong>P</strong>arentheses</li>
+      <li><strong>E</strong>xponents</li>
+      <li><strong>M</strong>ultiplication and <strong>D</strong>ivision (left to right)</li>
+      <li><strong>A</strong>ddition and <strong>S</strong>ubtraction (left to right)</li>
+    </ol>
+    
+    <h2>Using Variables in Math</h2>
+    
+    <p>You can use variables in mathematical expressions and store the results in new variables.</p>
+    
+    <h2>Try it yourself</h2>
+    
+    <p>Experiment with different mathematical operations. Try:</p>
+    <ul>
+      <li>Changing the values of <code>a</code> and <code>b</code></li>
+      <li>Adding parentheses to change the order of operations</li>
+      <li>Creating your own calculations</li>
+    </ul>
+  </div>
+
+  <div slot="playground">
+    <TutorialPlayground 
+      code={`# Basic arithmetic operations
+a = 10
+b = 3
+
+print(f"a = {a}, b = {b}")
+print()
+
+print(f"Addition: {a} + {b} = {a + b}")
+print(f"Subtraction: {a} - {b} = {a - b}")
+print(f"Multiplication: {a} * {b} = {a * b}")
+print(f"Division: {a} / {b} = {a / b}")
+print(f"Exponentiation: {a} ** {b} = {a ** b}")
+print(f"Floor Division: {a} // {b} = {a // b}")
+print(f"Modulus: {a} % {b} = {a % b}")
+
+print()
+print("Order of operations:")
+result1 = 2 + 3 * 4
+result2 = (2 + 3) * 4
+print(f"2 + 3 * 4 = {result1}")
+print(f"(2 + 3) * 4 = {result2}")
+
+# Try your own calculations below:
+x = 15
+y = 4
+# Add your code here`}
+    />
+  </div>
+</TutorialLayout>

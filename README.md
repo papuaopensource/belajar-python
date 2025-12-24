@@ -75,4 +75,3 @@ Panduan lengkap akan tersedia di file **CONTRIBUTING.md**.
 Repositori ini dirilis di bawah **MIT License** dan bebas digunakan, dipelajari, serta dikembangkan ulang.
 
 ---
-

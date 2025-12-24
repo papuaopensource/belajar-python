@@ -1,0 +1,22 @@
+---
+import TutorialPlayground from './react/TutorialPlayground.jsx';
+
+export interface Props {
+  code?: string;
+  readOnly?: boolean;
+  autoRun?: boolean;
+}
+
+const { 
+  code = "", 
+  readOnly = false,
+  autoRun = false 
+} = Astro.props;
+---
+
+<TutorialPlayground 
+  initialCode={code}
+  readOnly={readOnly}
+  autoRun={autoRun}
+  client:load 
+/>

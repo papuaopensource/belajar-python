@@ -1,0 +1,95 @@
+---
+import TutorialLayout from '../../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Hello, World!" 
+  description="Your first Python program"
+  currentPage={2}
+  totalPages={10}
+  prevLink="/en/materi/01-intro"
+  nextLink="/en/materi/03-variables"
+>
+  <!-- Preload Pyodide for better performance -->
+  <script>
+    // Preload Pyodide when user shows intent to use playground
+    document.addEventListener('DOMContentLoaded', () => {
+      // Preload on hover or focus of playground area
+      const playground = document.querySelector('[data-playground]');
+      if (playground) {
+        const preload = () => {
+          import('/src/lib/pyodide-runtime.js').then(({ preloadPyodide }) => {
+            preloadPyodide();
+          });
+        };
+        
+        playground.addEventListener('mouseenter', preload, { once: true });
+        playground.addEventListener('focusin', preload, { once: true });
+      }
+    });
+  </script>
+
+  <div slot="content">
+    <h1>Hello, World!</h1>
+    
+    <p>Welcome to your first Python lesson! Let's start with the traditional "Hello, World!" program.</p>
+    
+    <h2>The print() function</h2>
+    
+    <p>In Python, we use the <code>print()</code> function to display text on the screen. Here's how it works:</p>
+    
+    <ul>
+      <li><code>print()</code> is a built-in function in Python</li>
+      <li>You put the text you want to display inside parentheses</li>
+      <li>Text (strings) must be enclosed in quotes</li>
+    </ul>
+    
+    <h2>Types of Quotes</h2>
+    
+    <p>Python accepts various types of quotes:</p>
+    
+    <ul>
+      <li><code>"Hello, World!"</code> - Double quotes</li>
+      <li><code>'Hello, World!'</code> - Single quotes</li>
+      <li><code>"""Hello, World!"""</code> - Triple quotes for long text</li>
+    </ul>
+    
+    <h2>Try it yourself</h2>
+    
+    <p>Look at the code on the right. Click the "Run" button to execute it and see the output.</p>
+    
+    <p>Try modifying the text inside the quotes and run it again!</p>
+    
+    <h2>What you learned</h2>
+    
+    <ul>
+      <li>How to use the <code>print()</code> function</li>
+      <li>How to display text in Python</li>
+      <li>The importance of quotes around text</li>
+      <li>Different types of quotes you can use</li>
+    </ul>
+    
+    <p>Ready for the next lesson? Click "Next" to learn about variables!</p>
+  </div>
+
+  <div slot="playground" data-playground>
+    <TutorialPlayground 
+      code={`print("Hello, World!")
+print("Welcome to Python programming!")
+
+# Try changing the text above and click Run!
+# You can also add more print statements:
+print("This is my first Python program")
+
+# Try different types of quotes:
+print('Using single quotes')
+print("Using double quotes")
+
+# Display multiple lines at once
+print("""This is text
+that consists of
+multiple lines""")`}
+    />
+  </div>
+</TutorialLayout>

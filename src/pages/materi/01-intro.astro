@@ -1,0 +1,118 @@
+---
+import TutorialLayout from '../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Pengenalan Python" 
+  description="Mengenal Python dan sejarahnya"
+  currentPage={1}
+  totalPages={10}
+  nextLink="/materi/02-hello-world"
+>
+  <!-- Preload Pyodide for better performance -->
+  <script>
+    // Preload Pyodide when user shows intent to use playground
+    document.addEventListener('DOMContentLoaded', () => {
+      // Preload on hover or focus of playground area
+      const playground = document.querySelector('[data-playground]');
+      if (playground) {
+        const preload = () => {
+          import('/src/lib/pyodide-runtime.js').then(({ preloadPyodide }) => {
+            preloadPyodide();
+          });
+        };
+        
+        playground.addEventListener('mouseenter', preload, { once: true });
+        playground.addEventListener('focusin', preload, { once: true });
+      }
+    });
+  </script>
+
+  <div slot="content">
+    <h1>Pengenalan Python</h1>
+    
+    <p>Selamat datang di dunia pemrograman Python! Mari kita mulai dengan mengenal apa itu Python dan siapa yang menciptakannya.</p>
+        <figure>
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+                alt="Python logo"
+                loading="lazy"
+                style="max-width: 250px; height: 250px;"
+            />
+            <figcaption>
+                Python logo 
+                <a
+                href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg"
+                target="_blank"
+                rel="noopener"
+                >
+                Wikimedia Commons
+                </a>
+            </figcaption>
+            </figure>
+    <h2>Apa itu Python?</h2>
+    
+    <p>Python adalah bahasa pemrograman yang:</p>
+    
+    <ul>
+      <li><strong>Mudah dipelajari</strong> - Sintaks yang sederhana dan mudah dibaca</li>
+      <li><strong>Serbaguna</strong> - Bisa digunakan untuk web, data science, AI, dan lainnya</li>
+      <li><strong>Powerful</strong> - Digunakan oleh perusahaan besar seperti Google, Netflix, Instagram</li>
+      <li><strong>Open Source</strong> - Gratis dan dikembangkan oleh komunitas global</li>
+    </ul>
+    
+    <h2>Siapa yang menciptakan Python?</h2>
+    <figure>
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg/500px-Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg"
+            alt=" at PyCon US 2024"
+            loading="lazy"
+            style="max-width:100%; height:auto;"
+        />
+        <figcaption>
+            Guido van Rossum speaking at PyCon US 2024 —
+            <a href="https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_in_PyConUS24_(cropped).jpg" target="_blank" rel="noopener">
+            Wikimedia Commons
+            </a>, CC BY-SA
+        </figcaption>
+    </figure>
+
+    <p>Python diciptakan oleh <strong>Guido van Rossum</strong>, seorang programmer asal Belanda. Beberapa fakta menarik:</p>
+    
+    <ul>
+        <li>Mulai mengembangkan Python pada tahun <strong>1989</strong></li>
+        <li>Nama "Python" diambil dari acara TV "Monty Python's Flying Circus"</li>
+        <li>Dijuluki "Benevolent Dictator for Life" (BDFL) komunitas Python</li>
+        <li>Bekerja di Google (2005-2012) dan Dropbox (2013-2019)</li>
+    </ul>
+    
+    <h2>Mengapa Python Populer?</h2>
+    
+    <p>Python menjadi salah satu bahasa pemrograman paling populer karena:</p>
+    
+    <ul>
+        <li><strong>Readable</strong> - Kode Python mudah dibaca seperti bahasa Inggris</li>
+        <li><strong>Productive</strong> - Bisa membuat program dengan lebih sedikit kode</li>
+        <li><strong>Versatile</strong> - Cocok untuk berbagai jenis proyek</li>
+        <li><strong>Community</strong> - Komunitas yang besar dan supportif</li>
+    </ul>
+    
+    <h2>Coba Python Pertama Kali</h2>
+    
+    <p>Mari coba menjalankan kode Python sederhana! Klik tombol "Run" di sebelah kanan untuk melihat hasilnya.</p>
+    
+    <p>Kode di sebelah kanan menunjukkan beberapa contoh sederhana tentang apa yang bisa dilakukan Python.</p>
+</div>
+
+<div slot="playground" data-playground>
+    <TutorialPlayground 
+    code={`print("Selamat Datang!")      
+
+nama_bahasa = "Python"
+tahun = 1989
+print(f"{nama_bahasa} dibuat pada {tahun}")
+`}
+    />
+</div>
+</TutorialLayout>

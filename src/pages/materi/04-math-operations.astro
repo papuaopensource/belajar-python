@@ -1,0 +1,142 @@
+---
+import TutorialLayout from '../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Operasi Matematika" 
+  description="Belajar operasi aritmatika dalam Python"
+  currentPage={4}
+  totalPages={10}
+  prevLink="/materi/03-variables"
+  nextLink="/materi/05-strings"
+>
+  <div slot="content">
+    <h1>Operasi Matematika</h1>
+    
+    <p>Python dapat melakukan perhitungan matematika menggunakan operator aritmatika. Mari jelajahi operasi matematika dasar.</p>
+    
+    <h2>Operator Aritmatika</h2>
+    
+    <table class="w-full border-collapse border border-border">
+      <thead>
+        <tr class="bg-muted">
+          <th class="border border-border p-2 text-left">Operator</th>
+          <th class="border border-border p-2 text-left">Operasi</th>
+          <th class="border border-border p-2 text-left">Contoh</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-border p-2"><code>+</code></td>
+          <td class="border border-border p-2">Penjumlahan</td>
+          <td class="border border-border p-2"><code>5 + 3 = 8</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>-</code></td>
+          <td class="border border-border p-2">Pengurangan</td>
+          <td class="border border-border p-2"><code>5 - 3 = 2</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>*</code></td>
+          <td class="border border-border p-2">Perkalian</td>
+          <td class="border border-border p-2"><code>5 * 3 = 15</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>/</code></td>
+          <td class="border border-border p-2">Pembagian</td>
+          <td class="border border-border p-2"><code>6 / 3 = 2.0</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>**</code></td>
+          <td class="border border-border p-2">Pangkat</td>
+          <td class="border border-border p-2"><code>2 ** 3 = 8</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>//</code></td>
+          <td class="border border-border p-2">Pembagian Bulat</td>
+          <td class="border border-border p-2"><code>7 // 3 = 2</code></td>
+        </tr>
+        <tr>
+          <td class="border border-border p-2"><code>%</code></td>
+          <td class="border border-border p-2">Modulus (Sisa Bagi)</td>
+          <td class="border border-border p-2"><code>7 % 3 = 1</code></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <h2>Urutan Operasi</h2>
+    
+    <p>Python mengikuti urutan operasi matematika standar (PEMDAS):</p>
+    <ol>
+      <li><strong>P</strong>arentheses (Tanda Kurung)</li>
+      <li><strong>E</strong>xponents (Pangkat)</li>
+      <li><strong>M</strong>ultiplication dan <strong>D</strong>ivision (Perkalian dan Pembagian, dari kiri ke kanan)</li>
+      <li><strong>A</strong>ddition dan <strong>S</strong>ubtraction (Penjumlahan dan Pengurangan, dari kiri ke kanan)</li>
+    </ol>
+    
+    <h2>Menggunakan Variabel dalam Matematika</h2>
+    
+    <p>Anda bisa menggunakan variabel dalam ekspresi matematika dan menyimpan hasilnya dalam variabel baru.</p>
+    
+    <h2>Fungsi Matematika Berguna</h2>
+    
+    <p>Python juga menyediakan beberapa fungsi matematika bawaan:</p>
+    
+    <ul>
+      <li><code>abs()</code> - Nilai absolut</li>
+      <li><code>round()</code> - Pembulatan</li>
+      <li><code>max()</code> - Nilai maksimum</li>
+      <li><code>min()</code> - Nilai minimum</li>
+    </ul>
+    
+    <h2>Coba Sendiri</h2>
+    
+    <p>Eksperimen dengan berbagai operasi matematika. Coba:</p>
+    <ul>
+      <li>Mengubah nilai <code>a</code> dan <code>b</code></li>
+      <li>Menambahkan tanda kurung untuk mengubah urutan operasi</li>
+      <li>Membuat perhitungan Anda sendiri</li>
+      <li>Menggunakan fungsi matematika bawaan</li>
+    </ul>
+  </div>
+
+  <div slot="playground">
+    <TutorialPlayground 
+      code={`# Operasi aritmatika dasar
+a = 10
+b = 3
+
+print(f"a = {a}, b = {b}")
+print()
+
+print(f"Penjumlahan: {a} + {b} = {a + b}")
+print(f"Pengurangan: {a} - {b} = {a - b}")
+print(f"Perkalian: {a} * {b} = {a * b}")
+print(f"Pembagian: {a} / {b} = {a / b}")
+print(f"Pangkat: {a} ** {b} = {a ** b}")
+print(f"Pembagian Bulat: {a} // {b} = {a // b}")
+print(f"Modulus: {a} % {b} = {a % b}")
+
+print()
+print("Urutan operasi:")
+hasil1 = 2 + 3 * 4
+hasil2 = (2 + 3) * 4
+print(f"2 + 3 * 4 = {hasil1}")
+print(f"(2 + 3) * 4 = {hasil2}")
+
+print()
+print("Fungsi matematika:")
+angka = -15.7
+print(f"abs({angka}) = {abs(angka)}")
+print(f"round({angka}) = {round(angka)}")
+print(f"max(10, 20, 5) = {max(10, 20, 5)}")
+print(f"min(10, 20, 5) = {min(10, 20, 5)}")
+
+# Coba perhitungan Anda sendiri di bawah ini:
+x = 15
+y = 4
+# Tambahkan kode Anda di sini`}
+    />
+  </div>
+</TutorialLayout>

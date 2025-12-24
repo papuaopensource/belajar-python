@@ -1,0 +1,113 @@
+---
+import TutorialLayout from '../../../layouts/TutorialLayout.astro';
+import TutorialPlayground from '../../../components/TutorialPlayground.astro';
+---
+
+<TutorialLayout 
+  title="Introduction to Python" 
+  description="Learn about Python and its history"
+  currentPage={1}
+  totalPages={10}
+  nextLink="/en/materi/02-hello-world"
+>
+  <!-- Preload Pyodide for better performance -->
+  <script>
+    // Preload Pyodide when user shows intent to use playground
+    document.addEventListener('DOMContentLoaded', () => {
+      // Preload on hover or focus of playground area
+      const playground = document.querySelector('[data-playground]');
+      if (playground) {
+        const preload = () => {
+          import('/src/lib/pyodide-runtime.js').then(({ preloadPyodide }) => {
+            preloadPyodide();
+          });
+        };
+        
+        playground.addEventListener('mouseenter', preload, { once: true });
+        playground.addEventListener('focusin', preload, { once: true });
+      }
+    });
+  </script>
+
+  <div slot="content">
+    <h1>Introduction to Python</h1>
+    
+    <p>Welcome to the world of Python programming! Let's start by learning what Python is and who created it.</p>
+    <figure>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"
+        alt="Python logo"
+        loading="lazy"
+        style="max-width: 250px; height: 250px;"
+      />
+      <figcaption>
+        Python logo 
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg"
+          target="_blank"
+          rel="noopener"
+        >
+          Wikimedia Commons
+        </a>
+      </figcaption>
+    </figure>
+    
+    <h2>What is Python?</h2>
+    
+    <p>Python is a programming language that is:</p>
+    
+    <ul>
+      <li><strong>Easy to learn</strong> - Simple and readable syntax</li>
+      <li><strong>Versatile</strong> - Can be used for web, data science, AI, and more</li>
+      <li><strong>Powerful</strong> - Used by major companies like Google, Netflix, Instagram</li>
+      <li><strong>Open Source</strong> - Free and developed by a global community</li>
+    </ul>
+    
+    <h2>Who is the Creator?</h2>
+      <figure>
+        <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg/500px-Guido_van_Rossum_in_PyConUS24_%28cropped%29.jpg"
+            alt=" at PyCon US 2024"
+            loading="lazy"
+            style="max-width:60%; height:auto;"
+        />
+        <figcaption>
+            Guido van Rossum speaking at PyCon US 2024 —
+            <a href="https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_in_PyConUS24_(cropped).jpg" target="_blank" rel="noopener">
+            Wikimedia Commons
+            </a>, CC BY-SA
+        </figcaption>
+      </figure>
+    <p>Python was created by <strong>Guido van Rossum</strong>, a programmer from the Netherlands. Some interesting facts:</p>
+    
+    <ul>
+      <li>Started developing Python in <strong>1989</strong></li>
+      <li>Named "Python" after the TV show "Monty Python's Flying Circus"</li>
+      <li>Called the "Benevolent Dictator for Life" (BDFL) of the Python community</li>
+      <li>Worked at Google (2005-2012) and Dropbox (2013-2019)</li>
+    </ul>
+    
+    <h2>Why is Python Popular?</h2>
+    
+    <p>Python became one of the most popular programming languages because:</p>
+    
+    <ul>
+      <li><strong>Readable</strong> - Python code is easy to read like English</li>
+      <li><strong>Productive</strong> - Can create programs with less code</li>
+      <li><strong>Versatile</strong> - Suitable for various types of projects</li>
+      <li><strong>Community</strong> - Large and supportive community</li>
+    </ul>
+  </div>
+
+  <div slot="playground" data-playground>
+    <TutorialPlayground 
+      code={`
+print("Welcome!")      
+
+language_name = "Python"
+year = 1989
+print(f"{language_name} was created in {year}")
+`}
+    />
+  </div>
+</TutorialLayout>
