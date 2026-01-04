@@ -42,7 +42,7 @@ export const ui = {
     'materials.start_learning': 'Mulai Belajar Python',
     
     // Tutorial Layout
-    'tutorial.try_yourself': 'Coba sendiri',
+    'tutorial.try_yourself': 'Latihan',
     'tutorial.output': 'Output',
     'tutorial.auto_run': 'Auto-run',
     'tutorial.first_load': 'Memuat pertama kali...',
@@ -72,6 +72,22 @@ export const ui = {
     'lesson.errors.desc': 'Menangani error dengan baik',
     'lesson.project.title': 'Proyek Akhir',
     'lesson.project.desc': 'Gabungkan semua yang telah dipelajari',
+    
+    // Playground
+    'playground.title': 'Python Playground',
+    'playground.subtitle': 'Jalankan kode Python langsung di browser',
+    'playground.theme': 'Tema',
+    'playground.editor': 'Editor',
+    'playground.execution': 'Eksekusi',
+    'playground.loading_runtime': 'Memuat runtime Pyodide...',
+    'playground.executing': 'Menjalankan kode Python...',
+    'playground.finished': 'Selesai eksekusi dalam',
+    'playground.failed': 'Eksekusi gagal setelah',
+    'playground.no_output': '(tidak ada output)',
+    'playground.click_run': 'Klik "Jalankan" untuk mengeksekusi kode Python Anda...',
+    'playground.info': 'Editor ini menggunakan Monaco Editor untuk syntax highlighting Python. Playground menjalankan kode Python menggunakan Pyodide WebAssembly di browser Anda!',
+    'playground.welcome_comment': '# Selamat datang di Python Playground!\n# Tulis kode Python Anda di sini, lalu klik "Jalankan"\n\nprint("Hello, World!")\n\n# Operasi matematika\nx = 5\ny = 3\nprint(f"x + y = {x + y}")\nprint(f"x * y = {x * y}")',
+    'playground.reset_comment': '# Selamat datang di Python Playground!\n# Tulis kode Python Anda di sini dan klik "Jalankan"\n\nprint("Hello, World!")',
     
     // Footer
     'footer.copyright': '© 2025 Papua Open Source.',
@@ -142,6 +158,22 @@ export const ui = {
     'lesson.errors.desc': 'Dealing with errors gracefully',
     'lesson.project.title': 'Final Project',
     'lesson.project.desc': 'Put it all together',
+    
+    // Playground
+    'playground.title': 'Python Playground',
+    'playground.subtitle': 'Run Python code directly in your browser',
+    'playground.theme': 'Theme',
+    'playground.editor': 'Editor',
+    'playground.execution': 'Execution',
+    'playground.loading_runtime': 'Loading Pyodide runtime...',
+    'playground.executing': 'Executing Python code...',
+    'playground.finished': 'Finished execution in',
+    'playground.failed': 'Execution failed after',
+    'playground.no_output': '(no output)',
+    'playground.click_run': 'Click "Run" to execute your Python code...',
+    'playground.info': 'This editor uses Monaco Editor for Python syntax highlighting. The playground runs Python code using Pyodide WebAssembly in your browser!',
+    'playground.welcome_comment': '# Welcome to Python Playground!\n# Write your code here, then click "Run"\n\nprint("Hello, World!")\n\n# Math operations\nx = 5\ny = 3\nprint(f"x + y = {x + y}")\nprint(f"x * y = {x * y}")',
+    'playground.reset_comment': '# Welcome to Python Playground!\n# Write your Python code here and click "Run"\n\nprint("Hello, World!")',
     
     // Footer
     'footer.copyright': '© 2025 Papua Open Source.',
