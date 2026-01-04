@@ -91,14 +91,13 @@ export const ui = {
     
     // 404 Page
     '404.title': 'Halaman Tidak Ditemukan',
-    '404.subtitle': 'Maaf, halaman yang Anda cari tidak dapat ditemukan.',
     '404.description': 'Halaman mungkin telah dipindahkan, dihapus, atau URL yang Anda masukkan salah.',
     '404.back_home': 'Kembali ke Beranda',
     '404.go_materials': 'Lihat Materi Python',
     '404.go_playground': 'Coba Playground',
     
     // Footer
-    'footer.copyright': '© 2025 Papua Open Source.',
+    'footer.copyright': '© 2026 Papua Open Source.',
   },
   en: {
     // Navigation
@@ -185,13 +184,12 @@ export const ui = {
     
     // 404 Page
     '404.title': 'Page Not Found',
-    '404.subtitle': 'Sorry, the page you are looking for could not be found.',
     '404.description': 'The page may have been moved, deleted, or the URL you entered is incorrect.',
     '404.back_home': 'Back to Home',
     '404.go_materials': 'View Python Materials',
     '404.go_playground': 'Try Playground',
     
     // Footer
-    'footer.copyright': '© 2025 Papua Open Source.',
+    'footer.copyright': '© 2026 Papua Open Source.',
   },
 } as const;
