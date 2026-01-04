@@ -9,25 +9,21 @@
 
 **Belajar-Python** adalah ***open source*** repositori untuk mempelajari pemrograman Python, lengkap dengan **playground interaktif berbasis Pyodide** yang memungkinkan kamu menjalankan kode Python langsung di browser tanpa instalasi apa pun.
 
-Proyek ini dibuat agar proses belajar Python menjadi lebih mudah, cepat, dan ramah pemula. Seluruh materi disajikan secara ringan namun tetap terstruktur, sehingga cocok untuk siapa saja yang ingin memulai perjalanan belajar pemrograman Python.
-
-Ke depannya, dokumentasi dan playground akan dikembangkan sebagai halaman statis menggunakan **Astro.js** agar lebih nyaman diakses.
+Proyek ini dibuat agar proses belajar Python menjadi lebih mudah, dan cepat. Seluruh materi disajikan secara terstruktur, sehingga cocok untuk siapa saja yang ingin memulai perjalanan belajar pemrograman Python.
 
 ---
 
 ## Tujuan Proyek
 
-- Menyediakan materi bahasa pemrograman Python.
-- Memperkenalkan cara belajar Python tanpa instalasi melalui playground `Pyodide` untuk kemudahan akses.
-- Menjadi sumber belajar terbuka yang dapat dikembangkan bersama komunitas.
+- Menyediakan platform untuk mempelajari bahasa pemrograman Python.
+- Menjadi sumber belajar terbuka yang dapat dikembangkan bersama oleh siapa saja.
 
 ---
 
 ## Fitur Utama
 
-- Materi belajar Python dari dasar  
-- Contoh kode dan penjelasan singkat  
-- Playground Python berbasis Pyodide, sehingga cukup menjalankan kode langsung dari browser  
+- Materi dan contoh kode
+- Playground Python di browser
 
 ---
 
@@ -35,30 +31,12 @@ Ke depannya, dokumentasi dan playground akan dikembangkan sebagai halaman statis
 
 - **Frontend:** Astro.js  
 - **Playground:** Pyodide (Python via WebAssembly)  
-- **Deployment:** GitHub Pages / Vercel / Cloudflare Pages
-- **Content:** Markdown  
+- **Deployment:** Cloudflare Pages
+- **Content:** Markdown, Astro Page  
 
 ---
 
-## Roadmap
-
-Roadmap awal akan berkembang seiring kontribusi dan kebutuhan:
-
-- [ ] Inisialisasi project Astro.js  
-- [ ] Halaman materi dasar Python  
-- [ ] Integrasi playground Pyodide  
-- [ ] Contoh interaktif (variabel, input, output)  
-- [ ] Modul tipe data, fungsi, percabangan, dan perulangan  
-- [ ] Dark mode untuk tampilan lebih nyaman  
-- [ ] Playground dengan Monaco Editor  
-- [ ] Contoh project mini berbasis Python  
-- [ ] Dokumentasi lengkap dan panduan kontribusi  
-
-Roadmap lebih detail akan diperbarui secara berkala.
-
----
-
-## Panduan Kontribusi (Singkat)
+## Panduan Kontribusi
 
 Kontribusi terbuka untuk siapa saja!
 
@@ -72,6 +50,6 @@ Panduan lengkap akan tersedia di file **CONTRIBUTING.md**.
 
 ## Lisensi
 
-Repositori ini dirilis di bawah **MIT License** dan bebas digunakan, dipelajari, serta dikembangkan ulang.
+MIT Copyright (c) 2025-present
 
 ---

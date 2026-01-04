@@ -11,6 +11,25 @@ Proyek ini terbuka untuk siapa pun yang ingin membantu pengembangan baik dari se
 4. Ajukan **pull request** dengan penjelasan singkat mengenai perubahan yang dilakukan.
 5. Jika perubahan cukup besar, sertakan penjelasan tambahan atau catatan teknis yang diperlukan.
 
+## Struktur Proyek
+
+```sh
+├── public/          # File statis
+├── src/
+│   ├── assets/      # Aset (gambar, dll)
+│   ├── components/  # Komponen UI & playground
+│   ├── content/     # Konten blog
+│   ├── layouts/     # Layout halaman
+│   ├── lib/         # Utilitas (Pyodide, dll)
+│   ├── pages/       # Halaman & materi belajar
+│   ├── styles/      # CSS
+│   └── i18n/        # Dukungan multi-bahasa
+├── astro.config.mjs # Konfigurasi Astro
+├── tailwind.config.mjs # Konfigurasi Tailwind
+├── tsconfig.json    # Konfigurasi TypeScript
+└── package.json    # Dependensi & script
+```
+
 ## Pedoman Umum
 
 * Jaga struktur kode tetap rapi dan mudah dipahami.
