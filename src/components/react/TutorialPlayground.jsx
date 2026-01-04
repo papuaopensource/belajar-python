@@ -42,13 +42,12 @@ export default function TutorialPlayground({
     setOutput('');
 
     try {
-      // Lazy load the runtime only when needed
+      // Lazy load
       const { runPython, preloadPyodide } = await import('/src/lib/pyodide-runtime.js');
       
       // Show loading state for first-time users
       if (!window.__pyodideLoaded) {
         setIsLoading(true);
-        // Preload in background for better UX
         preloadPyodide();
       }
       
@@ -124,28 +123,27 @@ export default function TutorialPlayground({
 
       {/* Code Editor */}
       <div className="flex-1 flex flex-col min-h-0">
-        <div className="flex-1 relative">
+        <div className="flex-1 relative min-h-0" style={{ minHeight: '450px' }}>
           <textarea
             value={code}
             onChange={(e) => setCode(e.target.value)}
             readOnly={readOnly}
-            className="w-full h-full p-3 bg-background border-0 font-mono text-base resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-inset"
+            className="w-full h-full p-3 bg-background border-0 font-mono text-sm resize-none focus:outline-none focus:ring-2 focus:ring-ring focus:ring-inset"
             placeholder="Write Python code here..."
-            style={{ minHeight: '300px' }}
           />
         </div>
 
         {/* Output */}
         {(output || isRunning) && (
-          <div className="border-t bg-muted/20 max-h-32 overflow-auto">
-            <div className="p-2 border-b bg-muted/30">
+          <div className="border-t bg-muted/20 flex flex-col" style={{ minHeight: '150px', maxHeight: '300px' }}>
+            <div className="p-2 border-b bg-muted/30 flex-shrink-0">
               <span className="text-sm font-medium text-muted-foreground">Output</span>
             </div>
-            <div className="p-3">
+            <div className="flex-1 p-3 overflow-auto">
               {isRunning ? (
-                <div className="text-base text-muted-foreground">Running code...</div>
+                <div className="text-sm text-muted-foreground">Running code...</div>
               ) : (
-                <pre className="text-base font-mono whitespace-pre-wrap text-foreground">
+                <pre className="text-sm font-mono whitespace-pre-wrap text-foreground leading-relaxed">
                   {output}
                 </pre>
               )}
