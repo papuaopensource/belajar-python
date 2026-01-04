@@ -12,78 +12,85 @@ const basePath = lang === 'id' ? '/materi' : '/en/materi';
 const tutorials = [
   {
     id: 1,
-    title: t('lesson.hello_world.title'),
-    description: t('lesson.hello_world.desc'),
-    link: `${basePath}/01-hello-world`,
+    title: t('lesson.intro.title'),
+    description: t('lesson.intro.desc'),
+    link: `${basePath}/01-intro`,
     completed: false
   },
   {
     id: 2,
-    title: t('lesson.variables.title'),
-    description: t('lesson.variables.desc'),
-    link: `${basePath}/02-variables`,
+    title: t('lesson.hello_world.title'),
+    description: t('lesson.hello_world.desc'),
+    link: `${basePath}/02-hello-world`,
     completed: false
   },
   {
     id: 3,
-    title: t('lesson.math.title'),
-    description: t('lesson.math.desc'),
-    link: `${basePath}/03-math-operations`,
+    title: t('lesson.variables.title'),
+    description: t('lesson.variables.desc'),
+    link: `${basePath}/03-variables`,
     completed: false
   },
   {
     id: 4,
-    title: t('lesson.strings.title'),
-    description: t('lesson.strings.desc'),
-    link: `${basePath}/04-strings`,
-    completed: false,
-    disabled: true
+    title: t('lesson.math.title'),
+    description: t('lesson.math.desc'),
+    link: `${basePath}/04-math-operations`,
+    completed: false
   },
   {
     id: 5,
-    title: t('lesson.lists.title'),
-    description: t('lesson.lists.desc'),
-    link: `${basePath}/05-lists`,
+    title: t('lesson.strings.title'),
+    description: t('lesson.strings.desc'),
+    link: `${basePath}/05-strings`,
     completed: false,
     disabled: true
   },
   {
     id: 6,
-    title: t('lesson.loops.title'),
-    description: t('lesson.loops.desc'),
-    link: `${basePath}/06-loops`,
+    title: t('lesson.lists.title'),
+    description: t('lesson.lists.desc'),
+    link: `${basePath}/06-lists`,
     completed: false,
     disabled: true
   },
   {
     id: 7,
-    title: t('lesson.conditionals.title'),
-    description: t('lesson.conditionals.desc'),
-    link: `${basePath}/07-conditionals`,
+    title: t('lesson.loops.title'),
+    description: t('lesson.loops.desc'),
+    link: `${basePath}/07-loops`,
     completed: false,
     disabled: true
   },
   {
     id: 8,
-    title: t('lesson.functions.title'),
-    description: t('lesson.functions.desc'),
-    link: `${basePath}/08-functions`,
+    title: t('lesson.conditionals.title'),
+    description: t('lesson.conditionals.desc'),
+    link: `${basePath}/08-conditionals`,
     completed: false,
     disabled: true
   },
   {
     id: 9,
-    title: t('lesson.errors.title'),
-    description: t('lesson.errors.desc'),
-    link: `${basePath}/09-errors`,
+    title: t('lesson.functions.title'),
+    description: t('lesson.functions.desc'),
+    link: `${basePath}/09-functions`,
     completed: false,
     disabled: true
   },
   {
     id: 10,
+    title: t('lesson.errors.title'),
+    description: t('lesson.errors.desc'),
+    link: `${basePath}/10-errors`,
+    completed: false,
+    disabled: true
+  },
+  {
+    id: 11,
     title: t('lesson.project.title'),
     description: t('lesson.project.desc'),
-    link: `${basePath}/10-project`,
+    link: `${basePath}/11-project`,
     completed: false,
     disabled: true
   }
@@ -160,7 +167,7 @@ const tutorials = [
         <!-- Get Started -->
         <div class="mt-12 text-center">
           <a 
-            href={`${basePath}/01-hello-world`}
+            href={`${basePath}/01-intro`}
             class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8"
           >
             {t('materials.start_learning')}

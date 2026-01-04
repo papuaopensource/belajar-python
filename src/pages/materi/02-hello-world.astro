@@ -5,10 +5,11 @@ import TutorialPlayground from '../../components/TutorialPlayground.astro';
 
 <TutorialLayout 
   title="Hello, World!" 
-  description="Your first Python program"
-  currentPage={1}
+  description="Program Python pertama Anda"
+  currentPage={2}
   totalPages={10}
-  nextLink="/materi/02-variables"
+  prevLink="/materi/01-intro"
+  nextLink="/materi/03-variables"
 >
   <!-- Preload Pyodide for better performance -->
   <script>
@@ -32,43 +33,63 @@ import TutorialPlayground from '../../components/TutorialPlayground.astro';
   <div slot="content">
     <h1>Hello, World!</h1>
     
-    <p>Welcome to your first Python lesson! Let's start with the traditional "Hello, World!" program.</p>
+    <p>Selamat datang di pelajaran Python pertama Anda! Mari mulai dengan program tradisional "Hello, World!"</p>
     
-    <h2>The print() function</h2>
+    <h2>Fungsi print()</h2>
     
-    <p>In Python, we use the <code>print()</code> function to display text on the screen. Here's how it works:</p>
-    
-    <ul>
-      <li><code>print()</code> is a built-in function in Python</li>
-      <li>You put the text you want to display inside parentheses</li>
-      <li>Text (strings) must be enclosed in quotes</li>
-    </ul>
-    
-    <h2>Try it yourself</h2>
-    
-    <p>Look at the code on the right. Click the "Run" button to execute it and see the output.</p>
-    
-    <p>Try modifying the text inside the quotes and run it again!</p>
-    
-    <h2>What you learned</h2>
+    <p>Dalam Python, kita menggunakan fungsi <code>print()</code> untuk menampilkan teks di layar. Begini cara kerjanya:</p>
     
     <ul>
-      <li>How to use the <code>print()</code> function</li>
-      <li>How to display text in Python</li>
-      <li>The importance of quotes around text</li>
+      <li><code>print()</code> adalah fungsi bawaan Python</li>
+      <li>Anda memasukkan teks yang ingin ditampilkan di dalam tanda kurung</li>
+      <li>Teks (string) harus diapit dengan tanda kutip</li>
     </ul>
     
-    <p>Ready for the next lesson? Click "Next" to learn about variables!</p>
+    <h2>Jenis Tanda Kutip</h2>
+    
+    <p>Python menerima berbagai jenis tanda kutip:</p>
+    
+    <ul>
+      <li><code>"Hello, World!"</code> - Tanda kutip ganda atau double quotes</li>
+      <li><code>'Hello, World!'</code> - Tanda kutip tunggal atau single quotes</li>
+      <li><code>"""Hello, World!"""</code> - Triple quotes untuk teks panjang</li>
+    </ul>
+    
+    <h2>Latihan</h2>
+    
+    <p>Lihat kode di sebelah kanan. Klik tombol "Run" untuk menjalankannya dan lihat hasilnya.</p>
+    
+    <p>Coba ubah teks di dalam tanda kutip dan jalankan lagi!</p>
+    
+    <h2>Yang Anda Pelajari</h2>
+    
+    <ul>
+      <li>Cara menggunakan fungsi <code>print()</code></li>
+      <li>Cara menampilkan teks dalam Python</li>
+      <li>Pentingnya tanda kutip pada teks</li>
+      <li>Berbagai jenis tanda kutip yang bisa digunakan</li>
+    </ul>
+    
+    <p>Siap untuk pelajaran selanjutnya? Klik "Next" untuk belajar tentang variabel!</p>
   </div>
 
   <div slot="playground" data-playground>
     <TutorialPlayground 
       code={`print("Hello, World!")
-print("Welcome to Python programming!")
+print("Selamat datang di pemrograman Python!")
 
-# Try changing the text above and click Run!
-# You can also add more print statements:
-print("This is my first Python program")`}
+# Coba ubah teks di atas dan klik Run!
+# Anda juga bisa menambah statement print lainnya:
+print("Ini adalah program Python pertama saya")
+
+# Coba berbagai jenis tanda kutip:
+print('Menggunakan tanda kutip tunggal')
+print("Menggunakan tanda kutip ganda")
+
+# Menampilkan beberapa baris sekaligus
+print("""Ini adalah teks
+yang terdiri dari
+beberapa baris""")`}
     />
   </div>
 </TutorialLayout>
